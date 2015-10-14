@@ -14,7 +14,8 @@ I think that the best way to climb that stair is a hands-on approach. Starting f
 ###Where to start?
 There is a Debian based buildroot that is ready to be flashed to the c.h.i.p. The instructions are in Next Thing website. My assembler of choice is the Flat Assembler (FASM), freeware and open source. There is a version of fasm that targets ARM, but the assembler needs an x86-compatible computer to run. Get it on http://arm.flatassembler.net.
 Once connected to the c.h.i.p. through your x86 computer, write the following on your text editor of choice:
-```fasm
+~~hello.asm~~
+```asm
         format ELF executable
         entry start
 
@@ -40,4 +41,5 @@ start:  mov     r0,STDOUT_FILENO
 
 hello:  db      'Hello world',10
      .len=$-hello
-´´´
+```
+Then compile it with fasm
