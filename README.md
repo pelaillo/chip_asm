@@ -28,17 +28,23 @@ sys_write     = 0x04
 
         segment readable executable
 
-start:  mov     r0,STDOUT_FILENO
-        add     r1,pc,hello-$-8
-        mov     r2,hello.len
-        mov     r7,sys_write
+start:  mov     r0, STDOUT_FILENO
+        add     r1, pc, hello-$-8
+        mov     r2, hello.len
+        mov     r7, sys_write
         svc     EABI_CALL
-        mov     r0,EX_OK
-        mov     r7,sys_exit
+        mov     r0, EX_OK
+        mov     r7, sys_exit
         svc     EABI_CALL
 
 hello:  db      'Hello world',10
-     .len=$-hello
+     .len = $-hello
 ```
-Then compile it with fasm: `fasmarm hello.asm` 
-Now there is a new file called *hello* that won't run on your computer because is composed of ARM instructions. Copy it to the <div style="background-color: #feafe0;">c.h.i.p.</div> and then allow execution for it with `chmod 777 hello`. Then, if you call it `./hello` it will greet you back.
+Then compile it with fasm:
+`fasmarm hello.asm` 
+Now there is a new file called *hello*. It's an executable file that won't run on your computer because it's composed of ARM instructions.
+Copy it to the c.h.i.p. and then allow execution for it with `chmod 777 hello`. There is no need for anything else. No libraries, no dependecies, no complications. It's a native file ready to run on your ARM platform.
+
+Then, if you call it `./hello` it will greet you back.
+
+Very well. It was easy but what does it mean all these cryptic stuff? How does it work?
