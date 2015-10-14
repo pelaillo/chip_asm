@@ -12,8 +12,9 @@ There is a steep learning curve. You need to know the way the machine works, the
 I think that the best way to climb that stair is a hands-on approach. Starting from a simple working program and build upon it. I am just tarting to climb and this is my journey's logbook.
 
 ###Where to start?
-There is a Debian based buildroot that is ready to be flashed to the c.h.i.p. The instructions are in Next Thing website. My assembler of choice is the Flat Assembler (FASM), freeware and open source. There is a version of fasm that targets ARM, but the assembler needs an x86-compatible computer to run. Get it on http://arm.flatassembler.net. It is very simple to setup either in windows or in linux and it behaves the same on each platform. It will no matter for our purposes.
-Once connected to the c.h.i.p. through your x86 computer, write the following on your text editor of choice and save it:
+There is a Debian based buildroot that is ready to be flashed to the c.h.i.p. The instructions are in Next Thing website. It's important to learn also how to connect to the c.h.i.p. via ssh or usb cable.
+My assembler of choice is the Flat Assembler (FASM), freeware and open source. There is a version of fasm that targets ARM, but the assembler needs an x86-compatible computer to run. Get it on http://arm.flatassembler.net. It is very simple to setup either in windows or in linux and it behaves the same on each platform. It will no matter for our purposes.
+Write the following on your text editor of choice and save it:
 
 #####*hello.asm*
 ```asm
@@ -43,8 +44,11 @@ hello:  db      'Hello world',10
 Then compile it with fasm:
 `fasmarm hello.asm` 
 Now there is a new file called *hello*. It's an executable file that won't run on your computer because it's composed of ARM instructions.
-Copy it to the c.h.i.p. and then allow execution for it with `chmod 777 hello`. There is no need for anything else. No libraries, no dependecies, no complications. It's a native file ready to run on your ARM platform.
+Once connected to the c.h.i.p. through your x86 computer, copy the *hello* file to any folder and then allow execution for it with `chmod 777 hello`.
+There is no need for anything else. No libraries, no dependecies, no complications. It's a native file ready to run on your ARM platform.
 
-Then, if you call it `./hello` it will greet you back.
+Then, if you call it `./hello`, it will greet you back.
 
-Very well. It was easy but what does it mean all these cryptic stuff? How does it work?
+Very well. It was easy but, what does it mean all these cryptic stuff? How does it work?
+
+In brief we are going to dissect that example one bit at a time. *Under construction*
