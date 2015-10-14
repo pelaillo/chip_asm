@@ -13,7 +13,7 @@ I think that the best way to climb that stair is a hands-on approach. Starting f
 
 ###Where to start?
 There is a Debian based buildroot that is ready to be flashed to the c.h.i.p. The instructions are in Next Thing website. My assembler of choice is the Flat Assembler (FASM), freeware and open source. There is a version of fasm that targets ARM, but the assembler needs an x86-compatible computer to run. Get it on http://arm.flatassembler.net. It is very simple to setup either in windows or in linux and it behaves the same on each platform. It will no matter for our purposes.
-Once connected to the <span style="background-color: #feafe0;">c.h.i.p.</span> through your x86 computer, write the following on your text editor of choice and save it:
+Once connected to the [span style="background-color: #feafe0;"]c.h.i.p.[/span] through your x86 computer, write the following on your text editor of choice and save it:
 
 #####*hello.asm*
 ```asm
@@ -41,4 +41,4 @@ hello:  db      'Hello world',10
      .len=$-hello
 ```
 Then compile it with fasm: `fasmarm hello.asm` 
-Now there is a new file called *hello* that won't run on your computer because is composed of ARM instructions. Copy it to the <span style="background-color: #feafe0;">c.h.i.p.</span> and then allow execution for it with `chmod 777 hello`. Then, if you call it `./hello` it will greet you back.
+Now there is a new file called *hello* that won't run on your computer because is composed of ARM instructions. Copy it to the [div style="background-color: #feafe0;"]c.h.i.p.[/div] and then allow execution for it with `chmod 777 hello`. Then, if you call it `./hello` it will greet you back.
