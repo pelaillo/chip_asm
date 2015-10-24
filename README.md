@@ -54,6 +54,6 @@ There is no need for anything else. No libraries, no dependecies, no complicatio
 
 Very well. It was easy but, what does it mean all these cryptic stuff? How does it work?
 
-Let's dissect that example one bit at a time here [Dissecting hello example](https://github.com/pelaillo/chip_asm/hello/README.md)
+Let's dissect that example one bit at a time here [Dissecting hello example](https://github.com/pelaillo/chip_asm/tree/master/hello)
 
-Or, let's continue with a nontrivial example here [Working with bitmaps](https://github.com/pelaillo/chip_asm/bmper/README.md)
+Or, let's continue with a nontrivial example here [Working with bitmaps](https://github.com/pelaillo/chip_asm/tree/master/bmper)
