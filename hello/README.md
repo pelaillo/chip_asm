@@ -31,14 +31,14 @@ The layout of the c.h.i.p. processor is called ARM Cortex-A8. It is an evolution
 The other advantage that helped it to gain the popularity it has now is the lower energy compsumption, permitting ARM designs to rule on battery powered mobile devices.
 There are only 3 ARM instructions in use for carry on our task: `mov`, `add` and `svc`. Those instructions operate using the information hold on registers `r0`, `r1`, `r2` and `r7`. Registers are physical holders of binary information inside the processor. Our program get encoded by the assembler into binary instructions following ARM conventions as understood by the processor. Here, the encoded values are presented as hexadecimal numbers because if presented as binary numbers will take a lot of space, will mean the same thing and will not make any sense as these ones. Don't worry, they are to be read by the processor, not by humans.
 ```asm
-start:  mov     r0, STDOUT_FILENO	; 0100A0E3
-        add     r1, pc, hello-$-8	; 14108FE2
-        mov     r2, hello.len		; 0C20A0E3
-	mov     r7, sys_write		; 0470A0E3
-	svc     EABI_CALL		; 000000EF
-	mov     r0, EX_OK		; 0000A0E3
-	mov     r7, sys_exit		; 0170A0E3
-	svc     EABI_CALL		; 000000EF
+mov     r0, STDOUT_FILENO	; 0100A0E3
+add     r1, pc, hello-$-8	; 14108FE2
+mov     r2, hello.len		; 0C20A0E3
+mov     r7, sys_write		; 0470A0E3
+svc     EABI_CALL		; 000000EF
+mov     r0, EX_OK		; 0000A0E3
+mov     r7, sys_exit		; 0170A0E3
+svc     EABI_CALL		; 000000EF
 ```
 ####Data
 The main information exchange of the processor has to do with accessing RAM (Random Access Memory). This memory holds the instructions that are going to be executed. RAM also holds the data that is going to be consulted and modified in order to perform some task.
