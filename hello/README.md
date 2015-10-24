@@ -29,35 +29,23 @@ Once the operating system pass the execution to our program start, the processor
 For simplicity, we call `1` to the higher voltage and `0` to the lower one. As there are only two values, the system ys called binary. Every binary computer works in that way. The difference is in the layout of the gates inside.
 The layout of the c.h.i.p. processor is called ARM Cortex-A8. It is an evolution of a RISC machine designed several years ago. RISC stands by Reduced Instruction Set Computer but it have grown so that the "reduced" is hardly applicable. However, it is a lot simpler than the x86 architecture.
 The other advantage that helped it to gain the popularity it has now is the lower energy compsumption, permitting ARM designs to rule on battery powered mobile devices.
-There are only 3 ARM instructions in use for carry on our task: `mov`, `add` and `svc`. Those instructions operate using the information hold on registers `r0`, `r1`, `r2` and `r7`. Registers are physical holders of binary information inside the processor. Our program get encoded by the assembler into binary instructions following ARM conventions as understood by the processor.
-<table><tr><td>
+There are only 3 ARM instructions in use for carry on our task: `mov`, `add` and `svc`. Those instructions operate using the information hold on registers `r0`, `r1`, `r2` and `r7`. Registers are physical holders of binary information inside the processor. Our program get encoded by the assembler into binary instructions following ARM conventions as understood by the processor. Here, the encoded values are presented as hexadecimal numbers because if presented as binary numbers will take a lot of space, will mean the same thing and will not make any sense as these ones. Don't worry, they are to be read by the processor, not by humans.
 ```asm
-start:  mov     r0, STDOUT_FILENO
-        add     r1, pc, hello-$-8
-        mov     r2, hello.len
-        mov     r7, sys_write
-        svc     EABI_CALL
-        mov     r0, EX_OK
-        mov     r7, sys_exit
-        svc     EABI_CALL
+start:  mov     r0, STDOUT_FILENO	; 0100A0E3
+        add     r1, pc, hello-$-8	; 14108FE2
+        mov     r2, hello.len		; 0C20A0E3
+	mov     r7, sys_write		; 0470A0E3
+	svc     EABI_CALL		; 000000EF
+	mov     r0, EX_OK		; 0000A0E3
+	mov     r7, sys_exit		; 0170A0E3
+	svc     EABI_CALL		; 000000EF
 ```
-</td><td>
-```asm
-; 0100A0E3
-; 14108FE2
-; 0C20A0E3
-; 0470A0E3
-; 000000EF
-; 0000A0E3
-; 0170A0E3
-; 000000EF
-```
-</td></tr></table>
 ####Data
-All a computer does is to read and write binary information from and to peripherals. The main information exchange of the processor has is with the RAM (Random Access Memory). This memory holds the instructions that are going to be executed and also holds the data that is going to be consulted and modified in order to perform some task.
-In our simple example, the data is stored together with the code, after the instruction to return the execution to the operating system (`sys_exit`). That way, the processor will not try to interpret our data as a sequence of valid instructions, as they are not.
+The main information exchange of the processor has to do with accessing RAM (Random Access Memory). This memory holds the instructions that are going to be executed. RAM also holds the data that is going to be consulted and modified in order to perform some task.
+In our simple example, the data is stored together with the code, after the instruction that returns the execution to the operating system (`sys_exit`). That way, the processor will not try to interpret our data as a sequence of valid instructions, as they are not.
+Our data is a two word phrase encoded in ASCII character codes. ASCII (American Standard Code for Information Interchange) is a code that assign a two digit hexadecimal number to each character, to the space between words and for the new line return.
 ```asm
-hello:  db      'Hello world',10
+hello:  db      'Hello world',10        ; 48656C6C6F 20 776F726C64 0A
      .len = $-hello
 ```
 
