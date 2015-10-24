@@ -18,10 +18,9 @@ sys_write     = 0x04
 ####ELF executable
 We are instructing the assembler to produce an ELF executable. This is a binary format that follows an standard which is understood by the operating system. The Linux console will load the different segments in memory and then it will set the execution pointer to the memory position pointed by `start`, but only if the segment `executable` permission flag is set.
 ```asm
-        format ELF executable
-        entry start
-
-        segment readable executable
+    format ELF executable
+    entry start
+    segment readable executable
 ```
 
 ####ARM Cortex-A8
@@ -31,6 +30,7 @@ The layout of the c.h.i.p. processor is called ARM Cortex-A8. It is an evolution
 The other advantage that helped it to gain the popularity it has now is the lower energy compsumption, permitting ARM designs to rule on battery powered mobile devices.
 There are only 3 ARM instructions in use for carry on our task: `mov`, `add` and `svc`. Those instructions operate using the information hold on registers `r0`, `r1`, `r2` and `r7`. Registers are physical holders of binary information inside the processor. Our program get encoded by the assembler into binary instructions following ARM conventions as understood by the processor. Here, the encoded values are presented as hexadecimal numbers because if presented as binary numbers will take a lot of space, will mean the same thing and will not make any sense as these ones. Don't worry, they are to be read by the processor, not by humans.
 ```asm
+start:
     mov     r0, STDOUT_FILENO    ; 0100A0E3
     add     r1, pc, hello-$-8    ; 14108FE2
     mov     r2, hello.len        ; 0C20A0E3
