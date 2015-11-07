@@ -56,4 +56,6 @@ Very well. It was easy but, what does it mean all these cryptic stuff? How does 
 
 Let's dissect that example one bit at a time here [Dissecting hello example](https://github.com/pelaillo/chip_asm/tree/master/hello)
 
-Or, let's continue with a nontrivial example here [Working with bitmaps](https://github.com/pelaillo/chip_asm/tree/master/bmper)
+There is an excellent tutorial for learning ARM assembly in [thinkingeek Raspberry pi asm tutorial](http://thinkingeek.com/2013/01/09/arm-assembler-raspberry-pi-chapter-1) so it is pointless to try to repeat it here.
+
+So, let's continue with a nontrivial example here [Working with bitmaps](https://github.com/pelaillo/chip_asm/tree/master/bmper)
