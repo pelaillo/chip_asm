@@ -20,7 +20,7 @@ Links to the original chapters appeared in [thinkingeek.com](http://thinkingeek.
   <li><a href=http://thinkingeek.com/2013/05/12/arm-assembler-raspberry-pi-chapter-13/>Floating point</a></li>
   <li><a href=http://thinkingeek.com/2013/05/12/arm-assembler-raspberry-pi-chapter-14/>Matrix</a></li>
   <li><a href=http://thinkingeek.com/2013/08/11/arm-assembler-raspberry-pi-chapter-15/>Division</a></li>
-  <li><a href=http://thinkingeek.com/2013/08/23/arm-assembler-raspberry-pi-chapter-16/>Switch control structure</a></li>
+  <li><a href=http://thinkingeek.com/2013/08/23/arm-assembler-raspberry-pi-chapter-16/>Switch control structures: Jump Tables and Binary Search</a></li>
   <li><a href=http://thinkingeek.com/2013/11/20/arm-assembler-raspberry-pi-chapter-17/>Passing data</a></li>
   <li><a href=http://thinkingeek.com/2014/05/11/arm-assembler-raspberry-pi-chapter-18/>Frame Pointer</a></li>
   <li><a href=http://thinkingeek.com/2014/05/24/arm-assembler-raspberry-pi-chapter-19/>System calls</a></li>
