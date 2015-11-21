@@ -1,8 +1,7 @@
-##Raspberry Pi Assembly Tutorial by Roger Ferrer Ibañez
+##Index for Raspberry Pi Assembly Tutorial
+###Tutorial written by Roger Ferrer Ibañez
 
-Very nice and pragmatic exposition of assembly programming for the ARM processor. Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
-
-Links to the original chapters appeared in [thinkingeek.com](http://thinkingeek.com/)
+This is an index for Mr. Ferrer's tutorial. The tutorial is a very nice and pragmatic exposition of assembly programming for the ARM processor. Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. These are the links to the original chapters as appeared on [thinkingeek.com](http://thinkingeek.com/)
 
 <ol>
   <li><a href=http://thinkingeek.com/2013/01/09/arm-assembler-raspberry-pi-chapter-1/>Introduction</a></li>
